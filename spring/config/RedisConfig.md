@@ -14,8 +14,6 @@ public class RedisConfig {
 @EnableRedisRepositories: Redis를 사용하여 Spring Data의 리포지토리 기능을 활성화합니다. Redis를 데이터 저장소로 사용할 수 있도록 설정합니다.
 
 2. 필드 변수
-
-```java
 @Value("${spring.data.redis.host}")
 private String host;
 @Value("${spring.data.redis.port}")
