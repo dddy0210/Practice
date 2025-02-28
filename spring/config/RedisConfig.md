@@ -23,6 +23,7 @@ private String host;
 
 @Value("${spring.data.redis.port}")
 private int port;
+
 @Value("${spring.data.redis.host}"): application.properties 또는 application.yml 파일에 설정된 Redis의 호스트를 가져와 host 변수에 주입합니다.
 @Value("${spring.data.redis.port}"): application.properties 또는 application.yml 파일에 설정된 Redis의 포트를 가져와 port 변수에 주입합니다.
 
