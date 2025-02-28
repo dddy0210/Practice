@@ -8,6 +8,7 @@
 @RequiredArgsConstructor
 @EnableRedisRepositories
 public class RedisConfig {
+
 @Configuration: 이 클래스는 Spring의 설정 클래스임을 나타냅니다. Spring IoC 컨테이너에 의해 관리될 설정을 정의합니다.
 @Getter: Lombok 어노테이션으로, 클래스의 모든 필드에 대해 자동으로 getter 메서드를 생성합니다.
 @RequiredArgsConstructor: Lombok 어노테이션으로, final 또는 @NonNull로 선언된 필드에 대해 생성자를 자동으로 생성합니다.
