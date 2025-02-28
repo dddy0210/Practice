@@ -14,9 +14,8 @@ public class RedisConfig {
 @Getter: Lombok 어노테이션으로, 클래스의 모든 필드에 대해 자동으로 getter 메서드를 생성합니다.
 @RequiredArgsConstructor: Lombok 어노테이션으로, final 또는 @NonNull로 선언된 필드에 대해 생성자를 자동으로 생성합니다. 하지만 이 코드에서는 필드가 final이 아니므로 사실상 의미가 없습니다.
 @EnableRedisRepositories: Redis를 사용하여 Spring Data의 리포지토리 기능을 활성화합니다. Redis를 데이터 저장소로 사용할 수 있도록 설정합니다.
-2. 필드 변수
-java
-복사
+
+## 2. 필드 변수
 @Value("${spring.data.redis.host}")
 private String host;
 
@@ -24,9 +23,8 @@ private String host;
 private int port;
 @Value("${spring.data.redis.host}"): application.properties 또는 application.yml 파일에 설정된 Redis의 호스트를 가져와 host 변수에 주입합니다.
 @Value("${spring.data.redis.port}"): application.properties 또는 application.yml 파일에 설정된 Redis의 포트를 가져와 port 변수에 주입합니다.
-3. RedisConnectionFactory Bean 설정
-java
-복사
+
+## 3. RedisConnectionFactory Bean 설정
 @Bean
 public RedisConnectionFactory redisConnectionFactory(){
     return new LettuceConnectionFactory(host, port);
@@ -36,9 +34,7 @@ LettuceConnectionFactory: Redis와 연결하기 위해 Lettuce 클라이언트�
 Lettuce는 Redis와의 연결을 관리하는 클라이언트 라이브러리입니다. Jedis와 함께 Redis 클라이언트로 자주 사용됩니다.
 이 메서드는 Redis 서버에 대한 연결을 설정하는 역할을 합니다. redisConnectionFactory 메서드를 통해 Redis와의 연결을 관리할 수 있는 객체를 Spring 컨테이너에 등록합니다.
 
-4. RedisTemplate Bean 설정
-java
-복사
+## 4. RedisTemplate Bean 설정
 @Bean
 public RedisTemplate<String, String> redisTemplate(){
     RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
