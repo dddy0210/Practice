@@ -13,8 +13,7 @@ public class RedisConfig {
 @RequiredArgsConstructor: Lombok 어노테이션으로, final 또는 @NonNull로 선언된 필드에 대해 생성자를 자동으로 생성합니다.
 @EnableRedisRepositories: Redis를 사용하여 Spring Data의 리포지토리 기능을 활성화합니다. Redis를 데이터 저장소로 사용할 수 있도록 설정합니다.
 
-
-## 2. 필드 변수
+2. 필드 변수
 
 ```java
 @Value("${spring.data.redis.host}")
@@ -55,4 +54,4 @@ redisTemplate.setKeySerializer(new StringRedisSerializer()): Redis에서 저장�
 StringRedisSerializer는 Redis의 키와 값을 문자열로 직렬화/역직렬화하는 데 사용됩니다.
 redisTemplate.setValueSerializer(new StringRedisSerializer()): Redis에 저장될 값 역시 문자열이므로, 값에 대한 직렬화/역직렬화를 StringRedisSerializer로 처리합니다.
 yaml
-복사
+
